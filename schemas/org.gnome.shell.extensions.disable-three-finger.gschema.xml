@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schemalist>
+  <schema
+        id="org.gnome.shell.extensions.disable-three-finger"
+        path="/org/gnome/shell/extensions/disable-three-finger/"
+    >
+    <key name="three-finger-drag-command" type="s">
+        <default>""</default>
+    </key>
+    <key name="three-finger-drag" type="b">
+      <default>true</default>
+    </key>
+  </schema>
+</schemalist>

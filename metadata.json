@@ -2,8 +2,9 @@
   "name": "Disable 3 Finger Gestures",
   "description": "Disable the default three-finger touchpad gestures in GNOME.",
   "uuid": "disable-three-finger@lxp-git.github.com",
-  "shell-version": ["47"],
+  "shell-version": ["47", "48"],
   "url": "https://github.com/lxp-git/disable-three-finger",
-  "version": 2,
-  "version-name": "1.0.1"
+  "version": 3,
+  "version-name": "1.1.0",
+  "settings-schema": "org.gnome.shell.extensions.disable-three-finger"
 }
