@@ -4,7 +4,7 @@
   "uuid": "disable-three-finger@lxp-git.github.com",
   "shell-version": ["47", "48"],
   "url": "https://github.com/lxp-git/disable-three-finger",
-  "version": 3,
-  "version-name": "1.1.0",
+  "version": 4,
+  "version-name": "1.1.1",
   "settings-schema": "org.gnome.shell.extensions.disable-three-finger"
 }
