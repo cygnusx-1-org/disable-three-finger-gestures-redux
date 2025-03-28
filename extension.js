@@ -45,18 +45,20 @@ export default class PlainExampleExtension extends Extension {
 
     this._settings = this.getSettings();
     this.libinputThreeFingerDragPath = this._settings.get_value("three-finger-drag-command").unpack();
-    if (this.libinputThreeFingerDragPath && this._settings.get_value("three-finger-drag").unpack()) {
+    this.libinputThreeFingerDragEnable = this._settings.get_value("three-finger-drag").unpack();
+    if (this.libinputThreeFingerDragPath && this.libinputThreeFingerDragEnable) {
       this.threeFingerDragProc = Gio.Subprocess.new(this.libinputThreeFingerDragPath.split(" "), Gio.SubprocessFlags.NONE);
     }
     this._settings.connect("changed::three-finger-drag", (settings, key) => {
-      if (this.libinputThreeFingerDragPath && settings.get_value(key).unpack()) {
+      this.libinputThreeFingerDragEnable = settings.get_value(key).unpack();
+      if (this.libinputThreeFingerDragPath && this.libinputThreeFingerDragEnable) {
         if (!this.threeFingerDragProc) {
           this.threeFingerDragProc = Gio.Subprocess.new(this.libinputThreeFingerDragPath.split(" "), Gio.SubprocessFlags.NONE);
           return;
         }
         this.threeFingerDragProc.init(null);
       } else {
-        this.threeFingerDragProc.force_exit();
+        this.threeFingerDragProc && this.threeFingerDragProc.force_exit();
       }
     });
     this._settings.connect("changed::three-finger-drag-command", (settings, key) => {
@@ -71,7 +73,7 @@ export default class PlainExampleExtension extends Extension {
     });
     this._swipeMods = [];
     this._settings = null;
-    this.threeFingerDragProc.force_exit();
+    this.threeFingerDragProc && this.threeFingerDragProc.force_exit();
     this.threeFingerDragProc = null;
     this.libinputThreeFingerDragPath = null;
   }
