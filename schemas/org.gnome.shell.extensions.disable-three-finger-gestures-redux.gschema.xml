@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schemalist>
   <schema
-        id="org.gnome.shell.extensions.disable-three-finger"
-        path="/org/gnome/shell/extensions/disable-three-finger/"
+        id="org.gnome.shell.extensions.disable-three-finger-gestures-redux"
+        path="/org/gnome/shell/extensions/disable-three-finger-gestures-redux/"
     >
     <key name="three-finger-drag-command" type="s">
         <default>""</default>
