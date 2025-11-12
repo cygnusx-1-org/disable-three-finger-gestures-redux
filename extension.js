@@ -20,7 +20,7 @@ import Gio from "gi://Gio";
 import { Extension } from "resource:///org/gnome/shell/extensions/extension.js";
 import * as Main from "resource:///org/gnome/shell/ui/main.js";
 
-export default class PlainExampleExtension extends Extension {
+export default class DisableThreeFingerGesturesExtension extends Extension {
   enable() {
     this._swipeMods = [
       Main.overview._swipeTracker._touchpadGesture,
